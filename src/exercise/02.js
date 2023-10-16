@@ -4,13 +4,10 @@ import React, { useEffect, useState } from "react";
 /* ✅ modify this usePokemon custom hook to take in a query as an argument */
 export function usePokemon(query) {
   const [pokemon, setPokemon] = useState(null);
-  const [status,setStatus] = useState("idle")
-  const [errors,setErrors] = useState(null)
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${query}`)
       .then(r => r.json())
       .then(setPokemon);
-      .catch((error)  =>  setErrors(error))
   }, [query]);
 
   return {data:pokemon,errors:null,status:"pending"}
