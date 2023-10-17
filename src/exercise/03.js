@@ -3,17 +3,23 @@ import { useState, useEffect } from "react";
 export function useMouseCoordinates() {
   // ✅ get the setCoordinates function back too!
   // 👀 const [coordinates, setCoordinates] = useState(...)
-  const [coordinates] = useState({
+  const [coordinates,setCoordinates] = useState({
     clientX: 0,
     clientY: 0,
   });
 
   useEffect(() => {
+    console.log("hello")
     /* 
      ✅ create an event handler function to run when the mousemove event fires
      set state with the clientX and clientY coordinates from the event
      👀 function handler(event) {}
     */
+
+     /* function handler(event){
+      setCoordinates({clientX: ,
+      clientY:})
+     } */
 
     /* 
      ✅ attach an event listener to the window for the mousemove event

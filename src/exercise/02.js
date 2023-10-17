@@ -10,17 +10,17 @@ export function usePokemon(query) {
       .then(setPokemon);
   }, [query]);
 
-  return {data:pokemon,errors:null,status:"pending"}
+  return { data: pokemon, errors: null, status: "pending" };
   /* ✅ this hook should only return one thing: an object with the pokemon data */
 }
 
 function Pokemon({ query }) {
-  usePokemon()
+  usePokemon();
   /* 
    ✅ move the code from the useState and useEffect hooks into the usePokemon hook
    then, call the usePokemon hook to access the pokemon data in this component
   */
- /*  const [pokemon, setPokemon] = useState(null);
+  /*  const [pokemon, setPokemon] = useState(null);
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${query}`)
       .then(r => r.json())
